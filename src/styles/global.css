@@ -1,0 +1,173 @@
+/* src/styles/global.css */
+
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Variables CSS personnalisées */
+:root {
+  --primary-blue: #1e40af;
+  --primary-green: #059669;
+  --accent-yellow: #f59e0b;
+  --accent-orange: #ea580c;
+}
+
+/* Reset et base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations personnalisées */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Classes utilitaires personnalisées */
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-pulse-gentle {
+  animation: pulse 2s infinite;
+}
+
+/* Styles pour les boutons avec effet hover amélioré */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 hover:bg-gray-100 font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+}
+
+.btn-success {
+  @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+}
+
+.btn-danger {
+  @apply bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+}
+
+/* Styles pour les cartes */
+.card {
+  @apply bg-white rounded-2xl shadow-2xl overflow-hidden;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-white to-gray-50;
+}
+
+/* Styles pour la barre de progression */
+.progress-bar {
+  @apply h-3 bg-white bg-opacity-20 rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-500 ease-out;
+}
+
+/* Styles pour le scrollbar personnalisé */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Styles responsive */
+@media (max-width: 640px) {
+  .text-4xl {
+    @apply text-3xl;
+  }
+  
+  .text-3xl {
+    @apply text-2xl;
+  }
+  
+  .px-8 {
+    @apply px-4;
+  }
+  
+  .py-8 {
+    @apply py-6;
+  }
+}
+
+/* Styles pour les tooltips et états de focus */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50;
+}
+
+/* États disabled */
+.btn-disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed transform-none hover:scale-100;
+}
+
+/* Styles pour les badges */
+.badge {
+  @apply inline-block px-4 py-2 rounded-full text-sm font-medium;
+}
+
+.badge-blue {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-green {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-red {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-yellow {
+  @apply bg-yellow-100 text-yellow-800;
+}
